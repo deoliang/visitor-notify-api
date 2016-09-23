@@ -4,7 +4,9 @@ const app = express()
 app.set('port',(process.env.PORT || 5000))
 
 app.get('/', function (req, res) {
-  res.send('Hello' + req.query.test)
+  if(req.query.status == 'start' || req.query.status == 'end') {
+    res.send('Database has been updated')
+  }
 })
 
 app.listen(app.get('port'), function(){
