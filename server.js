@@ -6,6 +6,8 @@ app.set('port',(process.env.PORT || 5000))
 app.get('/', function (req, res) {
   if(req.query.status == 'start' || req.query.status == 'end') {
     res.send('Database has been updated')
+  }else{
+    res.send('Nothing changed')
   }
 })
 
