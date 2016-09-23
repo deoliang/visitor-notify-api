@@ -4,7 +4,7 @@ const app = express()
 app.set('port',(process.env.PORT || 5000))
 
 app.get('/', function (req, res) {
-  res.send('Hello AAA')
+  res.send('Hello' + req.query.test)
 })
 
 app.listen(app.get('port'), function(){
