@@ -8,5 +8,5 @@ app.get('/', function (req, res) {
 })
 
 app.listen(app.get('port'),function(){
-  console.log("app is running at"+app.get.('port'))
+  console.log("app is running at"+app.get('port'))
 });
