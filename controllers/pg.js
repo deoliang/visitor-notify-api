@@ -3,8 +3,7 @@ const json = require('../config/config.json')
 const time = require('./time.js')
 
 const start = function () {
-  // console.log(time.getDate())
-  // B
+  insert()
 }
 
 const end = function () {
@@ -12,11 +11,27 @@ const end = function () {
 }
 
 const insert = function () {
-  // B
+  const query = "INSERT INTO time (starttime) VALUES(" + "'" + time.getDate()  + "')"
+  callDB(query)
 }
 
 const update = function () {
   // D
+}
+
+const callDB = function (query) {
+  pg.defaults.ssl = true;
+  pg.connect(json.postgresUrl, function(err, client) {
+   if (err) throw err
+
+   client
+    .query(query, function(err) {
+      if (err) throw err
+    })
+    .on('row', function(row) {
+      return row
+    })
+  })  
 }
 
 module.exports = {
