@@ -3,7 +3,7 @@ const json = require('../config/config.json')
 const time = require('./time.js')
 
 const start = function () {
-  // time.getDate()
+  // console.log(time.getDate())
   // B
 }
 
@@ -12,10 +12,6 @@ const end = function () {
 }
 
 const insert = function () {
-  // B
-}
-
-const get = function () {
   // B
 }
 
