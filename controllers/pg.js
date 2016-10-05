@@ -7,7 +7,7 @@ const start = function () {
 }
 
 const end = function () {
-  // D
+  update()
 }
 
 const insert = function () {
@@ -16,7 +16,8 @@ const insert = function () {
 }
 
 const update = function () {
-  // D
+	const query ="UPDATE time SET endtime=" + "'" + time.getDate()  + "' WHERE id in (SELECT max(id) from time)"
+	callDB(query)
 }
 
 const callDB = function (query) {
